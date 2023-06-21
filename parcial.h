@@ -13,7 +13,8 @@ typedef struct node{
 Node *newNode (int data);
 void enlist(Node ** list, Node * node);
 void printear(Node ** list);
-void eliminar(Node ** list1, Node ** list2);
+int diferencia(Node ** list1, Node ** list2);
+void llenarVector(Node * dif, int pos);
 
 
 #endif //PARCIAL260622_PARCIAL_H

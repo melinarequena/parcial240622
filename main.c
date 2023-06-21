@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <malloc.h>
 #include "parcial.h"
 
 int main() {
@@ -27,7 +28,15 @@ int main() {
     printf("List 2:\n");
     printear(&list2);
 
-    eliminar(&list2, &list1);
+    int tam = diferencia(&list1, &list2);
+    int * v;
+    v = malloc(tam * sizeof(int));
+    if(v == NULL){
+        printf("Error l asignar la memoria correspondiente");
+        exit (-1);
+    }
+
+
     printf("List 2 eliminado:\n");
 
     printear(&list2);

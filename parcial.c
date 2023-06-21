@@ -39,36 +39,31 @@ void printear(Node **list) {
     }
 }
 
-void eliminar(Node **list2, Node **list1) {
+int diferencia(Node **list1, Node **list2) {
+    int cont=0, tamanio=0;
     Node * aux1 = (*list1);
-    Node * ant = NULL;
-
-    while (aux1 != NULL){
+    while(aux1 != NULL){
         Node * aux2 = (*list2);
         while (aux2 != NULL && aux2->data != aux1->data){
-            ant = aux2;
+
             aux2 = aux2->next;
         }
-        if(aux2 != NULL){
-            if(aux2->data == aux1->data){
-                if(aux2 == (*list2)){
-                    (*list2) = aux2->next;
-                }else{
-                    if(aux2->next == NULL){
-                        ant->next = NULL;
-                    }else{
-                        ant->next = aux2->next;
-                    }
-                }
-                free(aux2);
+        if(aux2 == NULL){
+            cont++;
+            llenarVector(aux2, cont);
+            tamanio++;
 
         }
-            aux2 = ant->next;
-        }
-
         aux1 = aux1->next;
-        }
     }
+    return tamanio;
+}
+
+void llenarVector(Node *dif, int pos) {
+    int * v;
+    v = malloc(tam * sizeof(int));
+    v[pos]= dif->data;
+}
 
 
 
