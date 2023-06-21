@@ -3,4 +3,4 @@ project(parcial260622 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(parcial260622 main.c)
+add_executable(parcial260622 main.c parcial.c)
