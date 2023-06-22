@@ -8,11 +8,16 @@
 typedef struct node{
     int data;
     struct node * next;
+    struct node * prev;
 }Node;
 
-Node *newNode (int data);
-void enlist(Node ** list, Node * node);
-void printear(Node ** list);
-void eliminar(Node ** list);
+typedef struct list{
+    Node * header;
+}List;
 
+Node *newNode (int data);
+List *newList();
+void enlist(List * list, Node * node);
+void printear(List * list);
+void reemplazar(List * list, Node * node, int pos);
 #endif //PARCIAL260622_PARCIAL_H

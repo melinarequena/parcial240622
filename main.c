@@ -1,24 +1,23 @@
 #include <stdio.h>
-#include <malloc.h>
 #include "parcial.h"
 
 int main() {
-    Node * list1 = NULL;
+    List * list1 = newList();
 
-    enlist(&list1, newNode(2));
-    enlist(&list1, newNode(37));
-    enlist(&list1, newNode(31));
-    enlist(&list1, newNode(20));
-    enlist(&list1, newNode(37));
-    enlist(&list1, newNode(6));
+    enlist(list1, newNode(2));
+    enlist(list1, newNode(37));
+    enlist(list1, newNode(31));
+    enlist(list1, newNode(20));
+    enlist(list1, newNode(37));
+    enlist(list1, newNode(6));
 
     printf("List 1:\n");
-    printear(&list1);
+    printear(list1);
 
-    printf("List 2 eliminado:\n");
+    printf("List eliminado:\n");
 
-    eliminar(&list1);
-    printear(&list1);
+    reemplazar(list1, newNode(444), 3);
+    printear(list1);
 
 
     return 0;
